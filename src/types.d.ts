@@ -11,6 +11,7 @@ interface ValidateEmailReturn {
   email?: string;
   mx?: [] | MXRecord[];
   isDisposable?: boolean;
+  isValid?: boolean;
 }
 
 export interface ValidateEmail {

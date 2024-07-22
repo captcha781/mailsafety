@@ -29,6 +29,7 @@ export const validateEmail: ValidateEmail = async (email): Promise<ValidateEmail
     localPart,
     mx: [],
     isDisposable: false,
+    isValid: false,
   };
 
   const lookup = await dnslookup(domain);
@@ -36,6 +37,7 @@ export const validateEmail: ValidateEmail = async (email): Promise<ValidateEmail
 
   result.mx = lookup;
   result.isDisposable = isDisposableMail;
+  result.isValid = lookup.length > 0;
 
   return result;
 };
