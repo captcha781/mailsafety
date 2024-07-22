@@ -14,14 +14,8 @@ export interface ValidateEmailReturn {
   isValid?: boolean;
 }
 
-export interface ValidateEmail {
-  (email: string): Promise<ValidateEmailReturn | null>;
-}
+export type ValidateEmail = (email: string) => Promise<ValidateEmailReturn | null>;
 
-export interface IsDisposable {
-  (records: MXRecord[]): Promise<boolean>;
-}
+export type IsDisposable = (records: MXRecord[]) => Promise<boolean>;
 
-export interface RetrieveMxRecords {
-  (domain: string): Promise<MXRecord[] | null>;
-}
+export type RetrieveMxRecords = (domain: string) => Promise<MXRecord[] | null>;
