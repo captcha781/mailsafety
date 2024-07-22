@@ -1,9 +1,9 @@
-interface MXRecord {
+export interface MXRecord {
   priority: number;
   exchange: string;
 }
 
-interface ValidateEmailReturn {
+export interface ValidateEmailReturn {
   isEmail: boolean;
   localPart?: string;
   domain?: string;
