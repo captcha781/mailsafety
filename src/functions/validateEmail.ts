@@ -11,31 +11,31 @@ import { splitEmail } from '../utils/splitter';
  * @returns {Promise<ValidateEmailReturn | any | null | void>}
  *
  */
-export const validateEmail: ValidateEmail = async (email) => {
-  let isRegexValid = regexValidator(email);
+export const validateEmail: ValidateEmail = async (email): Promise<ValidateEmailReturn | null> => {
+  const isRegexValid = regexValidator(email);
   if (!isRegexValid) {
     return {
       isEmail: false,
     };
   }
 
-  let { domain, tld, localPart } = splitEmail(email);
+  const { domain, tld, localPart } = splitEmail(email);
 
-  let result: ValidateEmailReturn = {
+  const result: ValidateEmailReturn = {
     isEmail: true,
-    email: email,
-    domain: domain,
+    email,
+    domain,
     tld: `.${tld}`,
-    localPart: localPart,
+    localPart,
     mx: [],
     isDisposable: false,
   };
 
-  let lookup = await dnslookup(domain);
-  let isDisposableMail = await isDisposable(lookup);
+  const lookup = await dnslookup(domain);
+  const isDisposableMail = await isDisposable(lookup);
 
-  result['mx'] = lookup;
-  result['isDisposable'] = isDisposableMail;
+  result.mx = lookup;
+  result.isDisposable = isDisposableMail;
 
   return result;
 };

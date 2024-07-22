@@ -1,5 +1,5 @@
 export const splitRecords = (mxRecord: string): string => {
-  let splittedRecord = mxRecord.split('.');
-  let domain = splittedRecord.slice(1).join('.');
+  const splittedRecord = mxRecord.split('.');
+  const domain = splittedRecord.slice(1).join('.');
   return domain;
 };

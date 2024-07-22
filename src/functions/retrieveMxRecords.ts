@@ -8,6 +8,6 @@ export const retrieveMxRecords: RetrieveMxRecords = async (domain) => {
     throw new TypeError('Invalid domain encountered');
   }
 
-  let records = dnslookup(domain);
+  const records = dnslookup(domain);
   return records;
 };
