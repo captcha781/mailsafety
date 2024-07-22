@@ -1,9 +1,8 @@
 {
   "name": "mailsafety",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An email identifier with mx lookup and disposable mail finder",
   "main": "dist/index.js",
-  "types": "dist/types.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
