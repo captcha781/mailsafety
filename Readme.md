@@ -18,7 +18,7 @@ Install mailsafety with npm
 
 ```javascript
 const mailsafety = require('mailsafety');
-const validationInfo = await mailsafety.validationInfo('test@example.com')
+const validationInfo = await mailsafety.validationEmail('test@example.com')
 /*
     Sample Response
     {
