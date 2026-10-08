@@ -1,6 +1,6 @@
 {
   "name": "mailsafety",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "An email identifier with mx lookup and disposable mail finder",
   "main": "dist/index.js",
   "scripts": {
